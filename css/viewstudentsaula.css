@@ -1,0 +1,95 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    color: #FBB048;
+    background-color: #152250;
+    text-align: center;
+    padding: 0.8em 0;
+}
+
+footer {
+    position: fixed;
+    background-color: #152250;
+    text-align: center;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+#homeButton {
+    width: 5vh;
+    /* O el tamaño que desees */
+    height: auto;
+    position: absolute;
+    /* Posición absoluta respecto al encabezado */
+    top: 2vh;
+    /* Ajuste el valor para alinear verticalmente */
+    left: 2vh;
+    /* Ajuste el valor para alinear horizontalmente */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    /* Suaviza la transición al pasar el cursor */
+}
+
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.boton-comportamiento {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* O ajusta al ancho deseado */
+    margin-bottom: 10px; /* Ajusta el espaciado entre botones */
+}
+
+.boton-comportamiento .badge {
+    margin-right: 5px; /* Espaciado entre el badge de puntos y el motivo */
+}
+
+.boton-comportamiento-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px; /* Ajusta el espaciado entre botones */
+}
+
+.boton-comportamiento {
+    flex-grow: 1; /* Ocupa todo el espacio disponible */
+}
+
+.boton-comportamiento + .btn {
+    margin-left: 10px; /* Espaciado entre el botón de comportamiento y el botón de eliminar */
+}
+
+#modalHistorial .modal-content {
+    border-radius: 0.5rem; /* Bordes redondeados para el modal */
+}
+
+#modalHistorial .list-group-item {
+    border-left: none;
+    border-right: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+}
+
+#modalHistorial .list-group-item:nth-child(odd) {
+    background-color: #f8f9fa; /* Un suave color de fondo para los ítems impares */
+}
+
+#modalHistorial .modal-body {
+    padding: 0; /* Elimina el padding predeterminado para alinear el borde de la lista con el modal */
+}

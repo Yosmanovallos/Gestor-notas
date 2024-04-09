@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero de Estudiantes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/students-board.css">
+    <style>
+        .btn-icon {
+            margin-left: 5px;
+        }
+        .action-buttons .btn {
+            padding: 0.375rem 0.75rem;
+            font-size: 1.2rem; /* Ajuste del tamaño de los iconos para mayor visibilidad */
+        }
+        .list-group-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 10px; /* Espaciado entre botones */
+        }
+
+        body {
+        background-color: #b3d9ff; /* Color de fondo azul clarito */
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        }
+
+        body, html {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Estilos personalizados para el título */
+    .titulo-aulas {
+        text-align: center;
+        margin: 2rem 0; /* Ajusta el espaciado vertical según necesites */
+        color: #0056b3; /* Cambia al color que prefieras */
+        font-size: 48px; /* Tamaño de fuente grande */
+        font-weight: bold; /* Fuente en negrita */
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Sombra suave para dar profundidad */
+    }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="../assets/homePage.png" alt="Inicio" id="homeButton" style="cursor:pointer;" />
+
+        <h1>Software Educativo - Rutas de Aprendizaje</h1>
+
+    </header>
+
+    <div class="my-5">
+        <h2 class="titulo-aulas">AULAS</h2>
+    </div>
+
+    <div class="container">
+        <!-- Lista de aulas creadas -->
+        <ul id="listaAulas" class="list-group mt-3">
+            <!-- Las aulas se cargarán aquí mediante JavaScript -->
+        </ul>
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/students-board.js"></script>
+</body>
+</html>

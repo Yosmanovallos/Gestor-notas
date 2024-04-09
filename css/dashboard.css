@@ -1,0 +1,62 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #b3d9ff; /* Color de fondo azul clarito */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.content-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    color: #FBB048;
+    background-color: #152250;
+    text-align: center;
+    padding: 0.8em 0;
+}
+
+#homeButton {
+    width: 5vh;
+    /* O el tamaño que desees */
+    height: auto;
+    position: absolute;
+    /* Posición absoluta respecto al encabezado */
+    top: 2vh;
+    /* Ajuste el valor para alinear verticalmente */
+    left: 2vh;
+    /* Ajuste el valor para alinear horizontalmente */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    /* Suaviza la transición al pasar el cursor */
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos personalizados para el título */
+.titulo-aulas {
+    text-align: center;
+    margin: 2rem 0; /* Ajusta el espaciado vertical según necesites */
+    color: #0056b3; /* Cambia al color que prefieras */
+    font-size: 48px; /* Tamaño de fuente grande */
+    font-weight: bold; /* Fuente en negrita */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Sombra suave para dar profundidad */
+}
+

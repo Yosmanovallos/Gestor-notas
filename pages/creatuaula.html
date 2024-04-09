@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crea tu Aula</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        .btn-icon {
+            margin-left: 5px;
+        }
+        .action-buttons .btn {
+            padding: 0.375rem 0.75rem;
+            font-size: 1.2rem; /* Ajuste del tamaño de los iconos para mayor visibilidad */
+        }
+        .list-group-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 20px; /* Espaciado entre botones */
+        }
+        .editarEstudianteBtn, .eliminarEstudianteBtn {
+            margin-right: 10px; /* Ajusta este valor según necesites */
+}
+        .list-group-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.3s ease-in-out; /* Agregamos transición para la animación */
+        }
+
+        .table td, .table th {
+    vertical-align: middle;
+        }
+
+        /* Ajusta el tamaño mínimo de la celda de acciones */
+        .table td.actions-cell {
+            min-width: 5px; /* Ajusta este valor según sea necesario */
+        }
+
+        .modal-dialog {
+    max-width: 90%; /* O cualquier otro tamaño */
+        }
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            color: #FBB048;
+            background-color: #152250;
+            text-align: center;
+            padding: 0.8em 0;
+        }
+
+        body {
+            background-color: #b3d9ff; /* Color de fondo azul clarito */
+        }
+
+        footer {
+            position: fixed;
+            background-color: #152250;
+            text-align: center;
+            text-align: center;
+            bottom: 0;
+            width: 100%;
+            color: white;
+            text-align: center;
+        }
+
+        #homeButton {
+            width: 5vh;
+            /* O el tamaño que desees */
+            height: auto;
+            position: absolute;
+            /* Posición absoluta respecto al encabezado */
+            top: 2vh;
+            /* Ajuste el valor para alinear verticalmente */
+            left: 2vh;
+            /* Ajuste el valor para alinear horizontalmente */
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            /* Suaviza la transición al pasar el cursor */
+        }
+
+        .btn-custom {
+            background-color: #1fa1ec; /* Verde */
+            color: white;
+            font-size: 18px;
+            padding: 10px 24px;
+            border: none;
+            border-radius: 25px; /* Bordes redondeados */
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+        }
+
+        .btn-custom:hover, .btn-custom:focus {
+            background-color: #44a6df; /* Un verde un poco más oscuro */
+            transform: translateY(-2px); /* Mover ligeramente hacia arriba */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra para dar efecto de elevación */
+        }
+
+        .btn-custom i {
+            margin-right: 8px; /* Espacio entre el icono y el texto */
+        }
+
+        /* Estilos para la lista de aulas */
+        #listaAulas {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .list-group-item {
+            background-color: #f8f9fa; /* Fondo claro */
+            border: 1px solid #ddd; /* Bordes sutiles */
+            border-radius: 5px; /* Bordes redondeados */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px; /* Espaciado entre elementos */
+            padding: 10px 20px; /* Padding generoso para más espacio */
+            transition: background-color 0.3s ease; /* Transición suave del fondo */
+        }
+
+        .list-group-item:hover {
+            background-color: #e2e6ea; /* Cambio de color al pasar el cursor */
+        }
+
+        /* Estilos para los botones dentro de la lista para mantener la coherencia */
+        .list-group-item .btn {
+            padding: 5px 10px; /* Padding reducido para los botones */
+            font-size: 14px; /* Tamaño de fuente más pequeño */
+        }
+
+        /* Iconos de acciones para editar y eliminar con margen */
+        .list-group-item .fas {
+            margin-right: 5px;
+        }
+
+        /* Mejora visual para los textos y separación de botones */
+        .list-group-item-text {
+            flex-grow: 1;
+            padding-right: 20px; /* Espacio antes de los botones */
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px; /* Espaciado entre botones */
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="../assets/homePage.png" alt="Inicio" id="homeButton" style="cursor:pointer;" />
+    
+        <h1>Software Educativo - Rutas de Aprendizaje</h1>
+    
+    </header>
+
+
+    <div class="container">
+        <!-- Botón para activar el modal de crear aula -->
+        <!-- Botón para activar el modal de crear aula con clases adicionales de Bootstrap -->
+        <button type="button" class="btn btn-lg btn-success mt-5 shadow" data-toggle="modal" data-target="#modalCrearAula" style="border-radius: 20px;">
+            <i class="fas fa-plus-circle"></i> Crea tu Aula
+        </button>
+
+
+        <!-- Modal para crear aula -->
+        <div class="modal fade" id="modalCrearAula" tabindex="-1" aria-labelledby="modalCrearAulaLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalCrearAulaLabel">Crea tu Aula de Clase</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formCrearAula">
+                            <div class="form-group">
+                                <label for="nombreAula">Nombre del Aula</label>
+                                <input type="text" class="form-control" id="nombreAula" required>
+                            </div>
+                            <button type="submit" class="btn btn-success">Guardar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para agregar estudiantes -->
+<div class="modal fade" id="modalAgregarEstudiantes" tabindex="-1" aria-labelledby="modalAgregarEstudiantesLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalAgregarEstudiantesLabel">Agregar Estudiantes al Aula</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="formAgregarEstudiante">
+                    <div class="form-row">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Primer Apellido" id="primerApellido">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Segundo Apellido" id="segundoApellido">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Primer Nombre" id="primerNombre">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Segundo Nombre" id="segundoNombre">
+                        </div>
+                        <div class="col">
+                            <input type="number" class="form-control" placeholder="Puntaje" id="puntaje">
+                        </div>
+                        
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-3">Agregar</button>
+                </form>
+                <hr>
+                <h5>Estudiantes Agregados</h5>
+                <div class="table-responsive"> <!-- Agregar esta clase -->
+                    <table class="table table-bordered">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>No</th>
+                                <th>Primer Apellido</th>
+                                <th>Segundo Apellido</th>
+                                <th>Primer Nombre</th>
+                                <th>Segundo Nombre</th>
+                                <th>Puntaje</th>
+                                <th>Nota</th> <!-- Agregamos una columna para las acciones -->
+                            </tr>
+                        </thead>
+                        <tbody id="listaEstudiantes">
+                            <!-- Los estudiantes agregados se listarán aquí -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Modal para editar aula -->
+    <div class="modal fade" id="modalEditarAula" tabindex="-1" aria-labelledby="modalEditarAulaLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalEditarAulaLabel">Editar Aula</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="formEditarAula">
+                        <div class="form-group">
+                            <label for="editarNombreAula">Nombre del Aula</label>
+                            <input type="text" class="form-control" id="editarNombreAula" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Lista de aulas creadas -->
+    <ul id="listaAulas" class="list-group mt-3">
+        <!-- Las aulas se cargarán aquí mediante JavaScript -->
+    </ul>
+
+    <div id="listaEstudiantesContainer" class="mt-3">
+        <!-- Aquí se mostrará la lista de estudiantes al hacer clic en un aula -->
+    </div>
+
+    <!-- Modal de Confirmación para Eliminar Aula -->
+<div class="modal fade" id="modalConfirmarEliminacion" tabindex="-1" aria-labelledby="modalConfirmarEliminacionLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalConfirmarEliminacionLabel">Confirmar Eliminación</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ¿Estás seguro de que deseas eliminar esta aula?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                <button type="button" class="btn btn-danger" id="confirmarEliminacion">Sí</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="../js/creatuaula.js"></script>
+

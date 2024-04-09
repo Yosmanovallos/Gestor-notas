@@ -1,0 +1,97 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    color: #FBB048;
+    background-color: #152250;
+    text-align: center;
+    padding: 0.8em 0;
+}
+
+body {
+    background-color: #b3d9ff; /* Color de fondo azul clarito */
+}
+
+footer {
+    position: fixed;
+    background-color: #152250;
+    text-align: center;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+#homeButton {
+    width: 5vh;
+    /* O el tamaño que desees */
+    height: auto;
+    position: absolute;
+    /* Posición absoluta respecto al encabezado */
+    top: 2vh;
+    /* Ajuste el valor para alinear verticalmente */
+    left: 2vh;
+    /* Ajuste el valor para alinear horizontalmente */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    /* Suaviza la transición al pasar el cursor */
+}
+
+.card {
+    margin-bottom: 30px; /* Espaciado entre tarjetas */
+    border: none; /* Remueve el borde predeterminado */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave para darle profundidad */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para el efecto hover */
+}
+
+.card-body {
+    padding: 20px; /* Espaciado interno más generoso */
+    background-color: #f5f5f5; /* Un fondo suave y moderno, cambia según tu preferencia */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Mueve la tarjeta ligeramente hacia arriba */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* Sombra más pronunciada para resaltar */
+}
+
+.card-title {
+    color: #007bff; /* Color principal de Bootstrap para títulos */
+    margin-bottom: 15px; /* Espaciado debajo del título */
+}
+
+.card-text {
+    color: #343a40; /* Un color más oscuro para el texto mejora la legibilidad */
+    margin-bottom: 15px; /* Espaciado debajo del texto */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Color principal de Bootstrap */
+    border-color: #007bff; /* Color de borde */
+    box-shadow: 0 2px 2px rgba(0,0,0,0.1); /* Sombra suave para el botón */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Un tono más oscuro para el hover */
+    border-color: #0056b3;
+}
+
+body, html {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Estilos personalizados para el título */
+    .titulo-aulas {
+        text-align: center;
+        margin: 2rem 0; /* Ajusta el espaciado vertical según necesites */
+        color: #0056b3; /* Cambia al color que prefieras */
+        font-size: 48px; /* Tamaño de fuente grande */
+        font-weight: bold; /* Fuente en negrita */
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Sombra suave para dar profundidad */
+    }

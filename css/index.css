@@ -1,0 +1,31 @@
+body {
+    background-color: #f7f9fc;
+}
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 400px;
+    padding: 25px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+}
+
+.form-control {
+    border-radius: 20px;
+}
+
+.btn-primary {
+    border-radius: 20px;
+    border: 0;
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    padding: 10px 30px;
+    font-size: 16px;
+}

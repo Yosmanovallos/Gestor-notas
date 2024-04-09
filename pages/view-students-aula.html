@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Planilla de Notas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/viewstudentsaula.css">
+</head>
+
+<body>
+
+    <header>
+        <img src="../assets/homePage.png" alt="Inicio" id="homeButton" style="cursor:pointer;" />
+
+        <h1>Software Educativo - Rutas de Aprendizaje</h1>
+
+    </header>
+
+    <div class="container-flex">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>No</th>
+                                <th>Primer Apellido</th>
+                                <th>Segundo Apellido</th>
+                                <th>Primer Nombre</th>
+                                <th>Segundo Nombre</th>
+                                <th>Puntaje</th>
+                                <th>Nota</th>
+                                <th>Historial de Puntos</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaEstudiantes">
+                            <!-- Los estudiantes se cargarán aquí mediante JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="panel">
+                    <h2 class="my-3" style="color: #fbb048; font-size: 24px;">Panel Admin</h2>
+                    <button class="btn btn-primary mb-2 shadow-lg" data-toggle="modal" data-target="#modalAgregarComportamiento">Agregar comportamiento</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalAgregarComportamiento" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Agregar Comportamiento</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="formAgregarComportamiento">
+                        <div class="form-group">
+                            <label for="motivo">Motivo:</label>
+                            <input type="text" class="form-control" id="motivo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="puntos">Agregar Puntos:</label>
+                            <input type="number" class="form-control" id="puntos" required>
+                        </div>
+                        <button type="submit" class="btn btn-success">Agregar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div id="modalHistorial" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content shadow-lg">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title">Historial de Puntajes</h5>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-0" style="max-height: 500px; overflow-y: auto;">
+                    <ul id="listaHistorial" class="list-group list-group-flush">
+                        <!-- Las entradas del historial de puntajes se cargarán aquí -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/viewstudentsaula.js"></script> <!-- Cambiado para apuntar al nuevo archivo JS -->
+</body>
+
+</html>
